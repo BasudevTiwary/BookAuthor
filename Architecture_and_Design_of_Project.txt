@@ -1,0 +1,86 @@
+                                      BookAuthor Project Architecture and Design Document
+
+Introduction
+
+This document provides an overview of the architecture and design of the BookAuthor project, built using the Spring Boot framework. It outlines the key components, their interactions, and the overall structure of the system. The document aims to assist developers and stakeholders in understanding the project's technical aspects.
+
+Architecture Overview
+
+The BookAuthor project follows a layered architecture pattern, consisting of Rest Controller, business logic, and data access layers. It utilizes the Model-View-Controller (MVC) design pattern for handling web requests in api form with proper response code.
+
+Key Components
+
+The main components of the BookAuthor project are as follows:
+
+Controllers:
+
+Here Controllers handle incoming requests, map them to specific methods based on request mapping annotations, here I have used @RestController.
+
+Service Components: 
+
+I have written the business logic of the application here. It encapsulate the application's core functionality and it interact with the data access layer. 
+@Service annotation is used for Service layer.
+
+Model Component: 
+
+For Model component I have used @Entity class and for Respository I have used Jpa Repository
+
+
+
+
+Book Service
+
+Description:   Handles operations related to books, such as creating, updating, and retrieving, deleting book information and                         associated author, in this application book is mapped with ManyToOne with Author.
+
+Purpose:       Manages the book-related functionalities and data.
+
+Functionality: Exposes APIs for CRUD operations on books and communicates with the data access layer for persistence.
+
+
+
+
+Author Service
+
+Description: Manages the operations related to authors, such as creating, updating, and retrieving author information and book                      associated with author,in this application Author is mapped with OneToMany with Book.
+
+Purpose:     Handles the author-related functionalities and data.
+
+Functionality: Provides APIs for CRUD operations on authors and communicates with the data access layer for persistence.
+
+
+API
+
+Author
+Post  --> localhost:8080/author/addAuthor
+Get   --> localhost:8080/author/{authorId}
+Get   --> localhost:8080/author/all
+Put   --> localhost:8080/author/update/{authorId}
+Delete--> localhost:8080/author/delete/{authorId}
+
+Book
+
+post  --> localhost:8080/book/author/{authorId}
+Get   --> localhost:8080/book/{bookId}
+Get   --> localhost:8080/book/all
+Put   --> localhost:8080/book/{bookId}
+Delete--> localhost:8080/book/delete/{bookId}
+
+Database
+
+Description: Stores the book and author data.
+Purpose:    Persists the book and author information for retrieval and future use.
+Functionality: Provides data storage and retrieval capabilities through a relational database management in MySql
+
+
+Conclusion
+
+This document has provided an overview of the architecture of the application . It outlined the key components, their responsibilities, and the layered approach commonly followed in MVC design based applications.
+
+
+
+
+
+
+
+
+
