@@ -19,5 +19,8 @@ Follow these steps to install and set up the Spring Boot project:
 
 Clone the repository: 
 Clone the project repository to your local machine using a version control system like Git.
-Use the following command: git clone 
+Use the following command: git clone https://github.com/BasudevTiwary/BookAuthor.git
+
+Navigate to project directory that is BookAuthor and right click and open the project usig  intellij IDEA
+and to run the application go to BooKAUthorApplication class and run project from there.
 
